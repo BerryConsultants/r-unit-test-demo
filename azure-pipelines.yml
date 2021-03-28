@@ -1,0 +1,20 @@
+pool:
+  name: Default
+  demands: Agent.OS -equals Linux
+
+variables:
+- name: RPath
+  value: /opt/bin/R
+
+steps:
+- bash:  ${{ variables.RPath }} -q -e 'writeLines(".libPaths(\"~/R-private\")", ".Rprofile"); dir.create("~/R-private", recursive = TRUE)'
+  displayName: "preliminaries"
+
+- bash: ${{ variables.RPath }} -q -e 'install.packages(c("testthat"), repos = "http://cran.us.r-project.org");'
+  displayName: 'install packages'
+
+- bash: ${{ variables.RPath }} -q -e "testthat::test_dir('tests')" > test-results.txt
+  displayName: 'test()'
+
+- bash:  grep -cio "Failed:\s*0" test-results.txt
+  displayName: 'validate results'
