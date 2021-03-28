@@ -1,16 +1,16 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* This repository provides a very simple template for writing unit tests in R.  
+* This repository provides a very simple RStudio template for writing unit tests in R using testthat.  
 
 ### How do I get set up? ###
 
-* git clone the repository by running the git clone command written out on the top right "Clone" button of https://bitbucket.org/berryconsultants/r-unit-test-demo/src/master/ within the terminal of your choice.
-* That's it!
+* git clone the repository and open it up in RStudio
+* In RStudio go to Tools > Shell... and run run_tests.sh
+* This will start the testthat unit test runner and output the test results
+* An azure-pipelines.yml file has been included for running the tests in the context of a CI build pipeline
 
 ### Who do I talk to? ###
 
-* Please talk to Pravin if you have any issues using this template!
+* Don't hesitatet to get in touch if you have any issues using this template!
