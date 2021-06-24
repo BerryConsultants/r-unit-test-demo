@@ -13,4 +13,4 @@
 
 ### Who do I talk to? ###
 
-* Don't hesitatet to get in touch if you have any issues using this template!
+* Don't hesitate to get in touch if you have any issues using this template!
